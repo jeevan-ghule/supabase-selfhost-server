@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  pg:
+    container_name: pg-container
+    # build: .
+    image: docker.io/library/postgres-poc
+    environment:
+      POSTGRES_DB: "pgdb"
+      POSTGRES_USER: "pguser"
+      POSTGRES_PASSWORD: "pgpass"
+    # volumes: # - ./init-db:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
